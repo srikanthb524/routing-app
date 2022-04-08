@@ -1,8 +1,11 @@
 <h3>Product Details Page</h3>
 
-
-product : {{product.name}}
-price : {{ product.price}}
+<div>
+<b>Product </b>: {{product.name}}
+</div>
+<div>
+<b>Price</b> : {{ product.price}}
+</div>
 <p>
-    <a class='btn btn-default' (click)="onBack()">Back </a>
+    <button class="btn btn-primary" (click)="onBack()" style="margin: 25px;">Back </button>
 </p>
