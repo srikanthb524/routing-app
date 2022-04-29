@@ -16,6 +16,7 @@ export class ProductService {
   }
   public getProduct(id: number) {
     let products: Product[] = this.getProducts();
+    console.log(products);
     return products.find((p) => p.productID == id);
   }
 

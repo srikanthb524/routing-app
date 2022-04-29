@@ -18,13 +18,20 @@ export class ProductDetailComponent implements OnInit {
     private _productService: ProductService
   ) {}
 
+  // ngOnInit() {
+  //   this.sub=this._Activatedroute.paramMap.subscribe(params=>{
+  //     console.log(params);
+  //     this.id=params.get('id');
+  //     this.product=this._productService.getProduct(this.id);
+  //     console.log(this.product);
+  //   });
+  // }
+
   ngOnInit() {
-    this.sub=this._Activatedroute.paramMap.subscribe(params=>{
-      console.log(params);
-      this.id=params.get('id');
-      this.product=this._productService.getProduct(this.id);
-      console.log(this.product);
-    });
+    this.id=this._Activatedroute.snapshot.params['id'];
+    let products=this._productService.getProducts();
+    this.product=products.find(p=>p.productID==this.id);
+
   }
 
   ngOnDestroy() {
